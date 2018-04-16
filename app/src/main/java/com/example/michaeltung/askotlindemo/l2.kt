@@ -1,5 +1,5 @@
 package com.example.michaeltung.askotlindemo
-
+//Kotlin 基本数据类型
 public  class l2{
     //定义常量
     //可以使用下换线使数字常量更 易读

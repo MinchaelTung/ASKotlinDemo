@@ -50,8 +50,40 @@ class l4 {
     }
 
     //while 与 do...while 循环
-    fun  bbb(){
+    fun bbb() {
+//        while是最基本的循环，它的结构为：
+//        while( 布尔表达式 ) {
+//            //循环内容
+//        }
+//        do…while 循环 对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。
+//        do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。
+//        do {
+//            //代码语句
+//        }while(布尔表达式);
+
+//        实例
+        println("----while 使用-----")
+        var x = 5
+        while (x > 0) {
+            println(x--)
+        }
+
+
+        println("----do...while 使用-----")
+        var y = 5
+        do {
+            println(y--)
+        } while (y > 0)
+        //输出结果    5,4,3,2,1
 
     }
+
+//    返回和跳转
+//    return。默认从最直接包围它的函数或者匿名函数返回。
+//    break。终止最直接包围它的循环。
+//    continue。继续下一次最直接包围它的循环。
+
+
+
 
 }

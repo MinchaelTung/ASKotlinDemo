@@ -82,7 +82,16 @@ class l4 {
 //    return。默认从最直接包围它的函数或者匿名函数返回。
 //    break。终止最直接包围它的循环。
 //    continue。继续下一次最直接包围它的循环。
+fun eee(){
+    for (i in 1..10){
+        if(i==3)continue //i 为 3 时跳过当前循环，继续下一次循环
+        println(i)
+        if(i>5) break //i 大于5 即为 6 时 跳出循环
 
+
+        //输出 1,2,4,5,6
+    }
+}
 
 
 

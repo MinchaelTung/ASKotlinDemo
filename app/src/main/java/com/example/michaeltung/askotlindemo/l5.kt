@@ -245,3 +245,97 @@ fun main3(args: Array<String>) {
 
 
 //抽象类
+//抽象是面向对象编程的特征之一，类本身，或类中的部分成员，都可以声明为abstract的。
+// 抽象成员在类中不存在具体的实现。     注意：无需对抽象类或抽象成员标注open注解。
+open class Base {
+    open fun f() {}
+}
+abstract class Derived : Base() {
+    override abstract fun f()
+}
+
+
+//嵌套类
+//我们可以把类嵌套在其他类中，看以下实例：
+class Outer {                  // 外部类
+    private val bar: Int = 1
+    class Nested {             // 嵌套类
+        fun foo() = 2
+    }
+}
+
+fun main4(args: Array<String>) {
+    val demo = Outer.Nested().foo() // 调用格式：外部类.嵌套类.嵌套类方法/属性
+    println(demo)    // == 2
+}
+
+//内部类
+//内部类使用 inner 关键字来表示。
+//内部类会带有一个对外部类的对象的引用，所以内部类可以访问外部类成员属性和成员函数。
+
+class Outer5 {
+    private val bar: Int = 1
+    var v = "成员属性"
+    /**嵌套内部类**/
+    inner class Inner {
+        fun foo() = bar  // 访问外部类成员
+        fun innerTest() {
+            var o = this@Outer5 //获取外部类的成员变量
+            println("内部类可以引用外部类的成员，例如：" + o.v)
+        }
+    }
+}
+//为了消除歧义，要访问来自外部作用域的 this，我们使用this@label，
+// 其中 @label 是一个 代指 this 来源的标签。
+fun main5(args: Array<String>) {
+    val demo = Outer5().Inner().foo()
+    println(demo) //   1
+    val demo2 = Outer5().Inner().innerTest()
+    println(demo2)   // 内部类可以引用外部类的成员，例如：成员属性
+}
+//匿名内部类
+
+class Outer22 {
+    private val bar: Int = 1
+    var v = "成员属性"
+    /**嵌套内部类**/
+    inner class Inner {
+        fun foo() = bar  // 访问外部类成员
+        fun innerTest() {
+            var o = this@Outer22 //获取外部类的成员变量
+            println("内部类可以引用外部类的成员，例如：" + o.v)
+        }
+    }
+}
+fun maina1(args: Array<String>) {
+    val demo = Outer22().Inner().foo()
+    println(demo) //   1
+    val demo2 = Outer22().Inner().innerTest()
+    println(demo2)   // 内部类可以引用外部类的成员，例如：成员属性
+}
+
+//类的修饰符
+//类的修饰符包括 classModifier 和_accessModifier_:
+
+//classModifier: 类属性修饰符，标示类本身特性。
+//abstract    // 抽象类
+//final       // 类不可继承，默认属性
+//enum        // 枚举类
+//open        // 类可继承，类默认是final的
+//annotation  // 注解类
+
+//accessModifier: 访问权限修饰符
+//private    // 仅在同一个文件中可见
+//protected  // 同一个文件中或子类可见
+//public     // 所有调用的地方都可见
+//internal   // 同一个模块中可见
+
+//实例
+// 文件名：example.kt
+//package foo
+//private fun foo() {} // 在 example.kt 内可见
+//public var bar: Int = 5 // 该属性随处可见
+//internal val baz = 6    // 相同模块内可见
+//
+
+

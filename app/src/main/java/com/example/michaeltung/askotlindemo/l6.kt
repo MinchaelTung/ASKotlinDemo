@@ -1,5 +1,8 @@
 package com.example.michaeltung.askotlindemo
 
+import android.content.Context
+import android.util.AttributeSet
+
 /**
  * @author: Michael Tung
  * @description:Kotlin 继承
@@ -48,10 +51,56 @@ class Student(name : String, age : Int, var no : String, var score : Int) : Pers
 //        成绩： 89
 
 
+
+//        子类没有主构造函数
+//        如果子类没有主构造函数，则必须在每一个二级构造函数中用 super 关键字初始化基类，
+//        或者在代理另一个构造函数。初始化基类时，可以调用基类的不同构造方法。
+
+//        class Student : Person {
+//            constructor(ctx: Context) : super(ctx) {
+//            }
+//            constructor(ctx: Context, attrs: AttributeSet) : super(ctx,attrs) {
+//            }
+//        }
+//        实例
+
+        /**用户基类**/
+        open class Person(name:String){
+            /**次级构造函数**/
+            constructor(name:String,age:Int):this(name){
+                //初始化
+                println("-------基类次级构造函数---------")
+            }
+        }
+        /**子类继承 Person 类**/
+        class Student:Person{
+
+            /**次级构造函数**/
+            constructor(name:String,age:Int,no:String,score:Int):super(name,age){
+                println("-------继承类次级构造函数---------")
+                println("学生名： ${name}")
+                println("年龄： ${age}")
+                println("学生号： ${no}")
+                println("成绩： ${score}")
+            }
+        }
+
+        fun main2(args: Array<String>) {
+            var s =  Student("Runoob", 18, "S12345", 89)
+        }
+//        输出结果：
+
+//        -------基类次级构造函数---------
+//        -------继承类次级构造函数---------
+//        学生名： Runoob
+//        年龄： 18
+//        学生号： S12345
+//        成绩： 89
+
     }
 
 
-    
+
 
 
 

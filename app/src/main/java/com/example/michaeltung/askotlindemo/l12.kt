@@ -4,7 +4,7 @@ import com.example.michaeltung.askotlindemo.l12.Site.name
 
 /**
  * @author: Michael Tung
- * @description:Kotlin 对象表达式和对象声明
+ * @description:1Q`
  * @projectName: ASKotlinDemo
  * @date: 2018-06-12
  * @time: 10:31

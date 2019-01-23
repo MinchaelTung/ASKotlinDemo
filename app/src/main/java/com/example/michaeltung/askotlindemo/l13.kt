@@ -336,6 +336,7 @@ class Site2(val map: MutableMap<String, Any?>) {
 
 //    请注意，provideDelegate 方法只影响辅助属性的创建，并不会影响为 getter 或 setter 生成的代码。
 
+
 //   网友的事例
 //    class ResourceID() {
 //        val image_id: String = "101"

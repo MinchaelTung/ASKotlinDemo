@@ -1,6 +1,6 @@
 package com.example.michaeltung.askotlindemo
 //Kotlin 基础语法
-public class l1{
+class l1{
     //带返回值的方法
     fun sum1(a: Int, b: Int): Int {
         return a + b
